@@ -1,6 +1,6 @@
 # seat_hhit
 
-A Reservation script for seats in HHIT Library Room 104
+A reservation script for seats in HHIT Library Room 104
 
 ## Notice 
 For research and entertainment only
