@@ -28,5 +28,9 @@ Technology is not guilty!
 5. Run the script by ```nohup python3 seatKiller.py > log.txt &```(nohup and & are STRONGLY recommended)
 
 ## Salvation && Pressure test
-- [ ] I think my script is capable of no more than 10 users per day per computer, but I haven't finished the pressure test because I don't have that many IDs. (Maximum: 3; Performance: Very Good)
-- [ ] If you really need seat reservation (e.g. Postgraduate entrance exams), please raise an issue and I might provide some help. 
+I think my script is capable of no more than 10 users per day per computer, but I haven't finished the pressure test because I don't have that many IDs.
+If you really need seat reservation (e.g. Postgraduate entrance exams), please raise an issue and I might provide some help. 
+- [+] User number 1: Very Good.
+- [+] User number 2: Very Good.
+- [+] User number 3: Very Good.
+- [ ] User number 4: Unknown.
