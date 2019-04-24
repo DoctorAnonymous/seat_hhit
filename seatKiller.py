@@ -55,11 +55,13 @@ class seatKiller(object):
         # 0-Unknown, 1-Success, 2-Fail
         localTime = time.localtime(time.time())
         year, month, mday, hour, minute, second, wday = localTime.tm_year, localTime.tm_mon, localTime.tm_mday, localTime.tm_hour, localTime.tm_min, localTime.tm_sec, localTime.tm_wday
-        print(year, month, mday, hour, minute, second, end='\t')
-        print(contentStr)
         if "成功" in contentStr:
+            print(year, month, mday, hour, minute, second, end='\t')
+            print(contentStr)
             return 1
         if "冲突" in contentStr:
+            print(year, month, mday, hour, minute, second, end='\t')
+            print(contentStr)
             return 2
         return 0
 
@@ -68,12 +70,12 @@ class seatKiller(object):
             localTime = time.localtime(time.time())
             year, month, mday, hour, minute, second, wday = localTime.tm_year, localTime.tm_mon, localTime.tm_mday, localTime.tm_hour, localTime.tm_min, localTime.tm_sec, localTime.tm_wday
             #print(year, month, mday, hour, minute, second)
-            if hour == 5 and minute > 25 and self.flagLogin == 0:
+            if hour == 5 and minute > 28 and self.flagLogin == 0:
                 try:
                     self.flagLogin = self.userLogin()
                 except:
                     pass
-            elif hour == 5 and minute >= 29:
+            elif hour == 5 and ((minute == 29 and second > 50) or minute > 30):
                 for i in range(len(self.flagReserve)):
                     try:
                         threading._start_new_thread(seatKiller.seatReserve, (self, i, self.reserveTime[i]))
@@ -85,8 +87,8 @@ class seatKiller(object):
             if hour == 5 and minute > 35:
                 print(self.userID + ' end of the day')
                 break
-            if hour == 5 and minute > 20 and minute < 33:
-                time.sleep(1)
+            if hour == 5 and minute > 25 and minute < 33:
+                time.sleep(0.2)
             else:
                 time.sleep(60)
             sys.stdout.flush()
